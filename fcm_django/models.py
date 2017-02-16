@@ -52,7 +52,7 @@ class FCMDeviceQuerySet(models.query.QuerySet):
 				**kwargs
 			)
 
-			for (index, item) in enumerate(result['results']):
+			for (index, item) in enumerate(result):
 				if 'error' in item:
 					reg_id = reg_ids[index]
 					self.filter(registration_id=reg_id).update(active=False)
